@@ -1,6 +1,11 @@
 function Form(props) {
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.addTask("Dire bonjour !");
+       } 
+             
     return (
-        <form>
+        <form onSubmit={handleSubmit}> 
             <h2 className="label-wrapper">
                 <label htmlFor="new-todo-input" className="label__lg">
                     Qu'y a-t-il à faire&nbsp;?

@@ -8,10 +8,13 @@ function App(props) {
   const remainingTasks = props.tasks.filter((task) => !task.completed).length;
   const completedTasks = props.tasks.filter((task) => task.completed).length;
   const allTasks = props.tasks.length;
+  function addTask(name) {
+    alert(name);
+   }    
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
-      <Form />
+      <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">
         {btnList}
       </div>
