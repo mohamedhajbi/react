@@ -58,7 +58,7 @@ function Todo(props) {
         <button
           type="button"
           className="btn btn__danger"
-          onClick={() => props.deleteTask(props.id)}>
+          onClick={()=> {if(confirm('Delete the item?')){props.deleteTask(props.id)};}}>
           Supprimer <span className="visually-hidden">{props.name}</span>
         </button>
       </div>
