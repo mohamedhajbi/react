@@ -8,9 +8,9 @@ import Recherche from './Recherche';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-    <Header />
+  
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="" element={<App />} />
       <Route path="/recherche/:id" element={<Recherche />} />
 
     </Routes>
