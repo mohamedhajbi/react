@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [data, setData] = useState([]); 
+  
   useEffect(() => {
     fetch('https://3001-mohamedhajbi-react-7uc6t49k2z3.ws-eu107.gitpod.io/Etudiants')
     .then(response => response.json())
