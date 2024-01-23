@@ -28,9 +28,14 @@ function Form() {
                 </button>
             </form>
             <div>
-                <div>
-                    <p>Nom: {data.name}</p>
-                </div>
+            {data ? (
+        <>
+          <h3>Name: {data.name}</h3>
+        </>
+      ) : (
+        <p>ID does not exist</p>
+      )}
+               
             </div>
         </div>
     );
