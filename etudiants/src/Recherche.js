@@ -10,11 +10,15 @@ function Recherche() {
       .catch(error => console.error('Erreur :', error));
       }, []); 
      console.log(data);
+     
+     if ( data == '') {
+        return <h1>il n'ya pas d'etudiant</h1>
+      }
     return (
       <div className="App">
        <ul>
-        
-          <li key={data.id}>{data.name}</li>
+      
+          <li>{data.name}</li>
   
        </ul>
       </div>
