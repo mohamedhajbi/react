@@ -1,0 +1,7 @@
+{
+    "Etudiants":[
+        {"id":1, "name":"Mohamed"},
+        {"id":2, "name":"Ali"},
+        {"id":3, "name":"Mariem"}
+    ]
+}
