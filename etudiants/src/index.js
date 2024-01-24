@@ -6,6 +6,7 @@ import Recherche from './Recherche';
 import Form from './Form';
 import Pays from './Pays';
 import Region from './Region';
+import Classes from './Classes';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +19,7 @@ root.render(
       <Route path="/form" element={<Form />} />
       <Route path="/pays" element={<Pays />} />
       <Route path="/region/:reg" element={<Region />} />
+      <Route path="/classes" element={<Classes />} />
 
     </Routes>
   </Router>
