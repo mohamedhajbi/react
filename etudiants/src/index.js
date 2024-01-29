@@ -7,6 +7,7 @@ import Form from './Form';
 import Pays from './Pays';
 import Region from './Region';
 import Classes from './Classes';
+import Modifier from './Modifier';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,7 +21,7 @@ root.render(
       <Route path="/pays" element={<Pays />} />
       <Route path="/region/:reg" element={<Region />} />
       <Route path="/classes" element={<Classes />} />
-
+      <Route path="/modifier/:id" element={<Modifier />} />
     </Routes>
   </Router>
 );

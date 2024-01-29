@@ -1,23 +1,24 @@
-import { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 
 function App() {
-  const [data, setData] = useState([]); 
-  
+  const [data, setData] = useState([]);
+
   useEffect(() => {
-    fetch('https://3001-mohamedhajbi-react-7uc6t49k2z3.ws-eu107.gitpod.io/Etudiants')
-    .then(response => response.json())
-    .then(data => setData(data))
-    .catch(error => console.error('Erreur :', error));
-    }, []); 
-   console.log(data);
+    fetch('https://3002-mohamedhajbi-react-dwtf3ex98ro.ws-eu107.gitpod.io/etudiants')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error('Erreur :', error));
+  }, []);
+  console.log(data);
+
   return (
     <div className="App">
-      <h1>le nbrs de etufiants est : {data.length}</h1>
-     <ul>
-      {data.map(item => (
-        <li key={item.id}>{item.name}</li>
-      ))}
-     </ul>
+      <h1>Le nombre d'étudiants est : {data.length}</h1>
+      <ul>
+        {data.map(item => (
+          <li key={item.id}>{item.lastname} {item.firstname}</li>
+        ))}
+      </ul>
     </div>
   );
 }
