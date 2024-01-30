@@ -8,6 +8,7 @@ import Pays from './Pays';
 import Region from './Region';
 import Classes from './Classes';
 import Modifier from './Modifier';
+import Ajouter from './Ajouter';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,7 +22,8 @@ root.render(
       <Route path="/pays" element={<Pays />} />
       <Route path="/region/:reg" element={<Region />} />
       <Route path="/classes" element={<Classes />} />
-      <Route path="/modifier/:id" element={<Modifier />} />
+      <Route path="/modifier" element={<Modifier />} />
+      <Route path="/ajouter" element={<Ajouter />} />
     </Routes>
   </Router>
 );

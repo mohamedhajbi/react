@@ -69,6 +69,20 @@ app.put('/etudiants/:id', (req, res) => {
     }
   });
 });
+// ajout 
+app.post('/etudiants', (req, res) => {
+  const nom = req.body.lastname;
+  const prenom = req.body.firstname;
+  const sql = 'INSERT INTO etudiants(lastname,firstname) VALUES (?,?)';
+  db.run(sql, [nom, prenom], function (err) {
+    if (err) {
+      console.error('Error updating student', err);
+      res.status(500).send('Error updating student');
+    } else {
+      res.send(`Student add successfully`);
+    }
+  });
+});
 
 //Démarrage du serveur
 app.listen(port, () => {

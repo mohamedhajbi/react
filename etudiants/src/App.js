@@ -4,7 +4,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://3002-mohamedhajbi-react-dwtf3ex98ro.ws-eu107.gitpod.io/etudiants')
+    fetch('https://3002-mohamedhajbi-react-qexjrgp3q80.ws-eu107.gitpod.io/etudiants')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Erreur :', error));
