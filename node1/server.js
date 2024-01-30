@@ -18,7 +18,8 @@ const createTableQuery = `
   CREATE TABLE IF NOT EXISTS etudiants (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     lastname TEXT,
-    firstname TEXT
+    firstname TEXT,
+    ville TEXT
   )
 `;
 db.run(createTableQuery);
@@ -96,6 +97,22 @@ app.delete('/etudiants', (req, res) => {
     }
   });
 });
+
+// Recherche d'étudiants par nom et ville
+app.get('/rechercher', (req, res) => {
+  const nom = req.query.lastname + "%";
+  const ville = req.query.ville + "%";
+  const sql = 'SELECT * FROM etudiants WHERE lastname like ? AND ville like ?';
+  db.all(sql, [nom, ville], function (err, rows) {
+    if (err) {
+      console.error('Error ', err);
+      res.status(500).send('Error '); 
+    } else {
+      res.json(rows); 
+    }
+  });
+});
+
 
 //Démarrage du serveur
 app.listen(port, () => {
