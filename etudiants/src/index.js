@@ -13,6 +13,7 @@ import Supprimer from './Supprimer';
 import Rechercher from './Rechercher';
 import Header from './Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Editer from './Editer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,7 @@ root.render(
       <Route path="/ajouter" element={<Ajouter />} />
       <Route path="/supprimer" element={<Supprimer />} />
       <Route path="/rechercher" element={<Rechercher />} />
+      <Route path="/editer" element={<Editer />} />
     </Routes>
   </Router>
 );

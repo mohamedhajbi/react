@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import jsPDF from 'jspdf';
+import Editer from './Editer';
+import { Link } from 'react-router-dom';
+
 function App() {
   const [data, setData] = useState([]);
 
@@ -21,6 +24,25 @@ function App() {
     });
     doc.save("list_etudiants.pdf");
   };
+
+
+  const handleDelete = (id) => {
+    fetch(`https://3002-mohamedhajbi-react-asv2vz7yrir.ws-eu107.gitpod.io/etudiants`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id : id }),
+    })
+        .then(response => response.json())
+        .then(updatedData => {
+        })
+        .catch(error =>{ console.error('Error Ajout etudiant:', error)
+    });
+};
+function refreshPage() {
+    window.location.reload(true);
+  }
   return (
   
    <div className="App">
@@ -41,6 +63,8 @@ function App() {
           <td>{item.lastname}</td>
           <td>{item.firstname}</td>
           <td>{item.ville}</td>
+          <td className='btn btn-danger' onClick={() => handleDelete(item.id)} >Supprimer</td>
+          <Link className="nav-link" to="/editer">Editer</Link>
         </tr>
       ))}
     </tbody>
