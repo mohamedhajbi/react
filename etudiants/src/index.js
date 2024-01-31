@@ -11,13 +11,15 @@ import Modifier from './Modifier';
 import Ajouter from './Ajouter';
 import Supprimer from './Supprimer';
 import Rechercher from './Rechercher';
-
+import Header from './Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-  
+  <Header />
     <Routes>
+      
       <Route path="" element={<App />} />
       <Route path="/recherche/:id" element={<Recherche />} />
       <Route path="/form" element={<Form />} />

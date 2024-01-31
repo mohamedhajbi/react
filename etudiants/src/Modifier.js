@@ -15,7 +15,7 @@ function Modifier() {
     };
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-mohamedhajbi-react-qexjrgp3q80.ws-eu107.gitpod.io/etudiants/${selectedId}`, {
+        fetch(`https://3002-mohamedhajbi-react-asv2vz7yrir.ws-eu107.gitpod.io/etudiants/${selectedId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,14 +31,24 @@ function Modifier() {
             .catch(error => console.error('Error updating data:', error));
     };
     return (
-        <div style={{ margin: '0 auto', width: '300px', textAlign: 'center', padding: '20px', border: '1px solid #ccc', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
-            <h1 style={{ color: '#444', marginBottom: '20px' }}>UPDDATE STUDENT INFORMATIONS </h1>
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <input type="text" value={selectedId} onChange={handleSelectChange} style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }} />
-                <input type="text" value={inputValue} onChange={handleInputChange} placeholder="New Name" style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }} />
-                <input type="text" value={inputValue1} onChange={handleInputChange1} placeholder="New firstname" style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }} />
-                <button type="submit" style={{ padding: '10px 15px', border: 'none', borderRadius: '4px', backgroundColor: '#007bff', color: 'white', cursor: 'pointer' }}>Update Data</button>
-            </form>
+        <div className="container mt-5">
+            <div className="card mx-auto" style={{ maxWidth: "300px" }}>
+                <div className="card-body">
+                    <h1 className="card-title text-center">Update</h1>
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <input type="text" value={selectedId} onChange={handleSelectChange} placeholder="ID" className="form-control" />
+                        </div>
+                        <div className="mb-3">
+                            <input type="text" value={inputValue} onChange={handleInputChange} placeholder="New Name" className="form-control" />
+                        </div>
+                        <div className="mb-3">
+                            <input type="text" value={inputValue1} onChange={handleInputChange1} placeholder="New Firstname" className="form-control" />
+                        </div>
+                        <button type="submit" className="btn btn-primary btn-block">Update Data</button>
+                    </form>
+                </div>
+            </div>
         </div>
 
     );

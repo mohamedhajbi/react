@@ -14,7 +14,7 @@ function Ajouter() {
     };
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-mohamedhajbi-react-qexjrgp3q80.ws-eu107.gitpod.io/etudiants`, {
+        fetch(`https://3002-mohamedhajbi-react-asv2vz7yrir.ws-eu107.gitpod.io/etudiants`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
