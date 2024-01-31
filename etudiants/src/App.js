@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import jsPDF from 'jspdf';
 function App() {
   const [data, setData] = useState([]);
 
@@ -10,7 +10,17 @@ function App() {
       .catch(error => console.error('Erreur :', error));
   }, []);
   console.log(data);
-
+  const printpdf = () => {
+    const doc = new jsPDF();
+    let y=10;
+    doc.text("Liste des etudaint", 30, y);
+    y+=10;
+    data.forEach(item => {
+      doc.text(`ID : ${item.id}, nom : ${item.firstname}, perom : ${item.lastname}, ville : ${item.ville}`,10,y);
+      y += 10;
+    });
+    doc.save("list_etudiants.pdf");
+  };
   return (
   
    <div className="App">
@@ -35,6 +45,8 @@ function App() {
       ))}
     </tbody>
   </table>
+  <button onClick={printpdf} className='btn btn-danger ms-3'>Imprimer PDF</button>
+
 </div>
 
   );
