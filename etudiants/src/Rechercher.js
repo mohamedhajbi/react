@@ -15,7 +15,7 @@ function Rechercher() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-mohamedhajbi-react-asv2vz7yrir.ws-eu107.gitpod.io/rechercher?lastname=${inputValue}&ville=${inputValue1}`)
+        fetch(`https://3002-mohamedhajbi-react-siy66ckqi6q.ws-eu107.gitpod.io/rechercher?lastname=${inputValue}&ville=${inputValue1}`)
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error('Error updating data:', error));

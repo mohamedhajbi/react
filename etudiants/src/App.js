@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://3002-mohamedhajbi-react-asv2vz7yrir.ws-eu107.gitpod.io/etudiants')
+    fetch('https://3002-mohamedhajbi-react-siy66ckqi6q.ws-eu107.gitpod.io/etudiants')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Erreur :', error));
@@ -27,7 +27,7 @@ function App() {
 
 
   const handleDelete = (id) => {
-    fetch(`https://3002-mohamedhajbi-react-asv2vz7yrir.ws-eu107.gitpod.io/etudiants`, {
+    fetch(`https://3002-mohamedhajbi-react-siy66ckqi6q.ws-eu107.gitpod.io/etudiants`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -63,8 +63,10 @@ function refreshPage() {
           <td>{item.lastname}</td>
           <td>{item.firstname}</td>
           <td>{item.ville}</td>
-          <td className='btn btn-danger' onClick={() => handleDelete(item.id)} >Supprimer</td>
-          <Link className="nav-link" to="/editer">Editer</Link>
+          <td>
+          <button className='btn btn-danger' onClick={() => handleDelete(item.id)} >Supprimer</button>
+          <Link className="btn btn-primary ms-3" to={`/editer/${item.id}`}>Editer</Link>
+          </td>
         </tr>
       ))}
     </tbody>

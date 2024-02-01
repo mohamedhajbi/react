@@ -13,7 +13,7 @@ function Editer() {
     
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-mohamedhajbi-react-asv2vz7yrir.ws-eu107.gitpod.io/etudiants/${id}`, {
+        fetch(`https://3002-mohamedhajbi-react-siy66ckqi6q.ws-eu107.gitpod.io/etudiants/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -31,7 +31,8 @@ root.render(
       <Route path="/ajouter" element={<Ajouter />} />
       <Route path="/supprimer" element={<Supprimer />} />
       <Route path="/rechercher" element={<Rechercher />} />
-      <Route path="/editer" element={<Editer />} />
+      <Route path="/editer/:id" element={<Editer />} />
+
     </Routes>
   </Router>
 );
