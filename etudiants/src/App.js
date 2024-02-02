@@ -27,7 +27,7 @@ function App() {
 
 
   const handleDelete = (id) => {
-    fetch(`https://3002-mohamedhajbi-react-siy66ckqi6q.ws-eu107.gitpod.io/etudiants`, {
+    fetch(`https://3001-mohamedhajbi-react-bb9flw85l0i.ws-eu107.gitpod.io/Etudiants`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

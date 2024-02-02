@@ -15,12 +15,12 @@ function Rechercher() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-mohamedhajbi-react-siy66ckqi6q.ws-eu107.gitpod.io/rechercher?lastname=${inputValue}&ville=${inputValue1}`)
+        fetch(`https://3001-mohamedhajbi-react-bb9flw85l0i.ws-eu107.gitpod.io/rechercher?lastname=${inputValue}&ville=${inputValue1}`)
             .then(response => response.json())
             .then(data => setData(data))
             .catch(error => console.error('Error updating data:', error));
     };
-
+    console.log(data)
     return (
         <div className="container mt-5">
         <div className="card mx-auto" style={{ maxWidth: "300px" }}>

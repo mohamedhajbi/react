@@ -12,7 +12,7 @@ function Supprimer() {
     };
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3002-mohamedhajbi-react-asv2vz7yrir.ws-eu107.gitpod.io/etudiants`, {
+        fetch(`https://3001-mohamedhajbi-react-bb9flw85l0i.ws-eu107.gitpod.io/Etudiants`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

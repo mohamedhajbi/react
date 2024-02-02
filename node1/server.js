@@ -1,7 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes, Op } = require('sequelize');
+
+
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
@@ -47,10 +49,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/etudiants', (req, res) => {
-  Etudiant.findAll().then((etudiants) => {
+  Etudiant.findAll({
+    order: [
+      ['id', 'DESC']
+    ]
+  }).then((etudiants) => {
     res.json(etudiants);
   });
 });
+
 
 app.get('/etudiants/:id', (req, res) => {
   const etudiantId = req.params.id;
@@ -80,6 +87,25 @@ app.delete('/etudiants/:id', (req, res) => {
     res.json({ message: 'Étudiant supprimé avec succès' });
   });
 });
+app.get('/rechercher', (req, res) => {
+  const nom = req.query.lastname + "%";
+  const ville = req.query.ville + "%";
+  
+  Etudiant.findAll({
+    where: {
+      lastname: { [Op.like]: nom },
+      ville: { [Op.like]: ville }
+    }
+  })
+  .then((etudiants) => {
+    res.json(etudiants);
+  })
+  .catch((err) => {
+    console.error('Error ', err);
+    res.status(500).send('Error '); 
+  });
+});
+
 
 const port = 3001;
 app.listen(port, () => {
