@@ -15,7 +15,7 @@ function Modifier() {
     };
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3001-mohamedhajbi-react-bb9flw85l0i.ws-eu107.gitpod.io/Etudiants/${selectedId}`, {
+        fetch(`https://3001-mohamedhajbi-react-yu07kg748ob.ws-eu108.gitpod.io/Etudiants/${selectedId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

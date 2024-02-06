@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://3001-mohamedhajbi-react-bb9flw85l0i.ws-eu107.gitpod.io/Etudiants')
+    fetch('https://3001-mohamedhajbi-react-yu07kg748ob.ws-eu108.gitpod.io/Etudiants')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Erreur :', error));
@@ -27,13 +27,14 @@ function App() {
 
 
   const handleDelete = (id) => {
-    fetch(`https://3001-mohamedhajbi-react-bb9flw85l0i.ws-eu107.gitpod.io/Etudiants`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id : id }),
-    })
+    fetch(`https://3001-mohamedhajbi-react-yu07kg748ob.ws-eu108.gitpod.io/etudiants/${id}`, {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ id: id }),
+})
+
         .then(response => response.json())
         .then(updatedData => {
         })

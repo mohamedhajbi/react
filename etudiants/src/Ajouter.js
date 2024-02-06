@@ -14,7 +14,7 @@ function Ajouter() {
     };
     const handleSubmit = event => {
         event.preventDefault();
-        fetch(`https://3001-mohamedhajbi-react-bb9flw85l0i.ws-eu107.gitpod.io/Etudiants`, {
+        fetch(`https://3001-mohamedhajbi-react-yu07kg748ob.ws-eu108.gitpod.io/Etudiants`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,10 +31,7 @@ function Ajouter() {
             msg = "Error Ajout etudiant"
         });
     };
-    function refreshPage() {
-        window.location.reload(true);
-      }
-    
+
 
     return (
         <div style={{ margin: '0 auto', width: '300px', textAlign: 'center', padding: '20px', border: '1px solid #ccc', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
@@ -42,7 +39,7 @@ function Ajouter() {
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <input type="text" value={inputValue} onChange={handleInputChange} placeholder="New Name" style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }}  />
                 <input type="text" value={inputValue1} onChange={handleInputChange1} placeholder="New firstname" style={{ padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }} />
-                <button type="submit" onClick={refreshPage} style={{ padding: '10px 15px', border: 'none', borderRadius: '4px', backgroundColor: '#007bff', color: 'white', cursor: 'pointer' }}> ADD </button>
+                <button type="submit"  style={{ padding: '10px 15px', border: 'none', borderRadius: '4px', backgroundColor: '#007bff', color: 'white', cursor: 'pointer' }}> ADD </button>
             </form>
             <App />
         </div>
